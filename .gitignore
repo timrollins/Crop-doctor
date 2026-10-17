@@ -1,0 +1,8 @@
+.env
+venv/
+__pycache__/
+backend/audio_out/
+*.wav
+*.mp3.env
+venv/
+__pycache__/
