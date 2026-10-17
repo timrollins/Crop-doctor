@@ -1,0 +1,10 @@
+{
+  "id": "leaf-spot",
+  "name": "Leaf spot",
+  "symptoms": ["small brown or black spots", "yellowing around lesions"],
+  "advice": [
+    "Remove badly affected leaves and dispose of them away from the field.",
+    "Avoid overhead watering and improve air circulation.",
+    "Ask a local extension worker about a crop-approved treatment."
+  ]
+}

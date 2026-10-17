@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Crop Doctor</title>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <main>
+      <h1>Crop Doctor</h1>
+      <p>Describe what you see in your crop to get practical next steps.</p>
+      <form id="diagnosis-form">
+        <label for="question">What is happening?</label>
+        <textarea id="question" required rows="5" placeholder="Example: My tomato leaves have brown spots..."></textarea>
+        <button type="submit">Get advice</button>
+      </form>
+      <p id="status" role="status"></p>
+      <section id="answer" hidden>
+        <h2>Advice</h2>
+        <p id="answer-text"></p>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
