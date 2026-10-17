@@ -1,10 +1,12 @@
 {
   "id": "leaf-spot",
-  "name": "Leaf spot",
-  "symptoms": ["small brown or black spots", "yellowing around lesions"],
-  "advice": [
-    "Remove badly affected leaves and dispose of them away from the field.",
-    "Avoid overhead watering and improve air circulation.",
-    "Ask a local extension worker about a crop-approved treatment."
-  ]
+  "crop": "various",
+  "problem": "Leaf spot",
+  "symptoms": "Small brown or black spots and yellowing around lesions.",
+  "cause": "A leaf-spot disease with a cause that should be confirmed locally.",
+  "cultural_control": "Remove badly affected leaves and dispose of them away from the field. Avoid overhead watering and improve air circulation.",
+  "chemical_option": "Ask a local extension worker about a crop-approved treatment.",
+  "prevention": "Keep foliage dry where possible and remove affected plant material.",
+  "see_officer_when": "Seek a local extension worker when symptoms spread or the crop is badly affected.",
+  "source": "Local Crop Doctor starter knowledge base"
 }
