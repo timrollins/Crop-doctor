@@ -1,0 +1,35 @@
+[
+  {
+    "id": "cassava_cbsd",
+    "crop": "cassava",
+    "problem": "Cassava Brown Streak Disease (CBSD)",
+    "symptoms": "Yellow patches along leaf veins, brown streaks on green stems, and brown dry rot inside the roots. Roots can look fine outside but be spoiled inside.",
+    "cause": "Cassava brown streak viruses, spread by whiteflies and by planting infected cuttings.",
+    "cultural_control": "Plant only clean cuttings from healthy plants. Uproot and destroy infected plants early. Harvest sooner in affected fields. Do not move cuttings from infected gardens.",
+    "chemical_option": "No chemical cures the virus. Controlling whiteflies with sprays is not reliable.",
+    "prevention": "Use tolerant or resistant varieties recommended locally (e.g. NASE varieties; confirm current choices with NARO).",
+    "see_officer_when": "Many plants in the field show symptoms, or you want certified clean planting material."
+  },
+  {
+    "id": "maize_fall_armyworm",
+    "crop": "maize",
+    "problem": "Fall Armyworm",
+    "symptoms": "Small see-through 'window' patches on young leaves, ragged holes, and sawdust-like droppings inside the whorl (the central leaves).",
+    "cause": "Caterpillars of the fall armyworm moth feeding on the leaves and growing point.",
+    "cultural_control": "Scout the field weekly from germination. Crush egg masses and caterpillars by hand. Put dry wood ash or fine dry sand into the whorl. Neem seed extract can reduce young caterpillars.",
+    "chemical_option": "Only use products registered in Uganda for maize (for example emamectin benzoate or similar). Ask an agro-dealer or extension officer for the registered product and dose. Wear gloves, mask and long clothing. Observe the pre-harvest interval on the label.",
+    "prevention": "Plant early with the first rains, avoid staggered planting, and rotate with non-cereal crops such as beans.",
+    "see_officer_when": "More than about 1 in 5 plants is damaged, or caterpillars are in the cobs."
+  },
+  {
+    "id": "banana_bxw",
+    "crop": "banana",
+    "problem": "Banana Xanthomonas Wilt (BXW)",
+    "symptoms": "Leaves yellow and wilt, fruits ripen too early, inside of the fruit has dark rot, and a yellow sticky ooze comes from cut stems or male buds.",
+    "cause": "A bacterium spread by contaminated tools, insects visiting male buds, and infected suckers.",
+    "cultural_control": "Remove male buds with a forked stick soon after the last hand forms. Clean tools with fire or bleach between plants. Cut infected plants at ground level and destroy them. Do not move suckers or leaves from infected gardens.",
+    "chemical_option": "No chemical cure. Disinfect tools only.",
+    "prevention": "Use clean suckers or tissue-culture plantlets and do not share unclean tools.",
+    "see_officer_when": "ALWAYS. BXW is a serious, reportable disease. Tell the agricultural officer or sub-county office as soon as you suspect it."
+  }
+]

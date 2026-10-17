@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crop Doctor</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 480px; margin: 0 auto; padding: 16px; }
+  button, select, input { font-size: 1rem; padding: 10px; margin: 6px 0; width: 100%; }
+  #result { white-space: pre-wrap; background: #f3f3f3; padding: 12px; border-radius: 8px; margin-top: 12px; }
+  img { max-width: 100%; border-radius: 8px; }
+</style>
+</head>
+<body>
+  <h2>Crop Doctor</h2>
+
+  <label>Language
+    <select id="lang">
+      <option value="en">English</option>
+      <option value="lug">Luganda</option>
+      <option value="sw">Swahili</option>
+    </select>
+  </label>
+
+  <label>API address
+    <input id="api" value="http://localhost:8000">
+  </label>
+
+  <input id="photo" type="file" accept="image/*" capture="environment">
+  <img id="preview" hidden>
+  <button id="diagnose">Diagnose photo</button>
+
+  <button id="record">Hold to record question</button>
+
+  <audio id="player" controls></audio>
+  <div id="result"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const show = (obj) => { $("result").textContent = typeof obj === "string" ? obj : JSON.stringify(obj, null, 2); };
+
+function playIfAny(data) {
+  if (data.audio_url) {
+    $("player").src = $("api").value + data.audio_url;
+    $("player").play().catch(() => {});
+  }
+}
+
+// Photo -> /diagnose
+$("photo").addEventListener("change", () => {
+  const f = $("photo").files[0];
+  if (f) { $("preview").src = URL.createObjectURL(f); $("preview").hidden = false; }
+});
+
+$("diagnose").addEventListener("click", async () => {
+  const f = $("photo").files[0];
+  if (!f) return show("Take or choose a photo first.");
+  const form = new FormData();
+  form.append("image", f);
+  form.append("language", $("lang").value);
+  show("Working...");
+  try {
+    const res = await fetch($("api").value + "/diagnose", { method: "POST", body: form });
+    const data = await res.json();
+    show(data);
+    playIfAny(data);
+  } catch (e) { show("Error: " + e.message); }
+});
+
+// Voice -> /ask
+let recorder, chunks = [];
+async function startRec() {
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    recorder = new MediaRecorder(stream);
+    chunks = [];
+    recorder.ondataavailable = (e) => chunks.push(e.data);
+    recorder.onstop = sendAudio;
+    recorder.start();
+    $("record").textContent = "Recording... release to send";
+  } catch (e) {
+    show("Mic error: " + e.message + "\n(Phones need HTTPS or localhost for the mic.)");
+  }
+}
+function stopRec() {
+  if (recorder && recorder.state === "recording") {
+    recorder.stop();
+    recorder.stream.getTracks().forEach((t) => t.stop());
+    $("record").textContent = "Hold to record question";
+  }
+}
+async function sendAudio() {
+  const blob = new Blob(chunks, { type: recorder.mimeType });
+  const form = new FormData();
+  form.append("audio", blob, "question.webm");
+  form.append("language", $("lang").value);
+  show("Working...");
+  try {
+    const res = await fetch($("api").value + "/ask", { method: "POST", body: form });
+    const data = await res.json();
+    show(data);
+    playIfAny(data);
+  } catch (e) { show("Error: " + e.message); }
+}
+$("record").addEventListener("pointerdown", startRec);
+$("record").addEventListener("pointerup", stopRec);
+$("record").addEventListener("pointerleave", stopRec);
+</script>
+</body>
+</html>
