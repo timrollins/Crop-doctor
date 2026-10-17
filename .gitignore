@@ -1,9 +1,12 @@
 .env
+backend/audio_out/
+.venv/
 venv/
 __pycache__/
-backend/audio_out/
+*.onnx
+*.onnx.json
 *.wav
 *.mp3
 *.webm
-venv/
-__pycache__/
+voices/
+.pytest_cache/

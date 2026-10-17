@@ -1,0 +1,11 @@
+{
+  "id": "banana_bxw",
+  "crop": "banana",
+  "problem": "Banana Xanthomonas Wilt (BXW)",
+  "symptoms": "Leaves yellow and wilt, fruits ripen too early, inside of the fruit has dark rot, and a yellow sticky ooze comes from cut stems or male buds.",
+  "cause": "A bacterium spread by contaminated tools, insects visiting male buds, and infected suckers.",
+  "cultural_control": "Remove male buds with a forked stick soon after the last hand forms. Clean tools with fire or bleach between plants. Cut infected plants at ground level and destroy them. Do not move suckers or leaves from infected gardens.",
+  "chemical_option": "No chemical cure. Disinfect tools only.",
+  "prevention": "Use clean suckers or tissue-culture plantlets and do not share unclean tools.",
+  "see_officer_when": "ALWAYS. BXW is a serious, reportable disease. Tell the agricultural officer or sub-county office as soon as you suspect it."
+}
