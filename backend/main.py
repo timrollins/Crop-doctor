@@ -99,7 +99,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     @app.get("/api/status")
     async def status() -> dict[str, Any]:
         return {
-            "llm_configured": bool(current.llm_api_key),
+            "llm_configured": bool(current.llm_api_key or current.llm_fallback_key),
             "model": current.llm_model,
             "fallback_configured": bool(current.llm_fallback_key),
             "stt_provider": current.stt_provider,
