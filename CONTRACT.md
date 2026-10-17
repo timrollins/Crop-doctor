@@ -1,32 +1,48 @@
 # Crop Doctor API contract
 
-## `GET /api/health`
+Language codes are `en`, `lug`, and `sw`. The aliases `lg`, `swa`, and
+`kiswahili` are accepted and normalised to `lug` or `sw`.
 
-Returns `{ "status": "ok" }`.
+## Health and status
 
-## `POST /api/diagnose`
+`GET /api/health` returns exactly `{"status":"ok"}`.
 
-Request JSON:
+`GET /api/status` returns non-secret configuration and knowledge counts:
 
 ```json
-{"question": "My tomato leaves have brown spots", "problem_id": "leaf-spot"}
+{"llm_configured": true, "model": "gemma-model-id", "fallback_configured": false,
+"stt_provider": "generic", "stt_configured": false, "tts_configured": false,
+"knowledge_entries": 4, "cache_seconds": 0}
 ```
 
-`question` is required. `problem_id` is optional and resolves to
-`knowledge/<problem_id>.json`. For an image, add `image_base64` and its
-`image_mime_type`. The response contains `answer` and the resolved `problem`
-(or `null`).
+## Diagnosis
 
-## `POST /api/ask`
+`POST /api/diagnose` accepts `question` (optional), `language` (default `en`),
+optional `problem_id`, and optional `image_base64` plus `image_mime_type`.
+At least one of question, image, or problem ID is required. The response
+contains the backward-compatible `answer` and `problem` fields plus:
+`advice_text`, `problem_id`, `problem_name`, `crop`, `confidence`, `language`,
+`needs_clearer_photo`, and `degraded`.
 
-Request JSON: `{"question": "Should I remove the spotted leaves?", "language": "en"}`.
-The answer is kept short for follow-up questions and audio playback.
+## Follow-up
 
-## `POST /api/transcribe`
+`POST /api/ask` accepts `question`, `language`, and optional `problem_id`.
+It returns the same response shape; diagnosis-only fields are null or default.
 
-Multipart upload with a `file` field. Returns `{ "text": "..." }`.
-Requires `STT_API_URL`.
+## Speech
 
-## `POST /api/speak`
+`POST /api/transcribe` accepts a multipart `file` and optional `language`
+query field. It returns `{"text":"..."}`.
 
-Accepts a `text` query parameter and returns an MP3. Requires `TTS_API_URL`.
+`POST /api/speak` accepts JSON `{"text":"...", "language":"en"}` and returns
+audio. The compatibility route `GET /api/speak?text=...&language=en` remains
+available.
+
+Invalid language or input returns 422. Provider rate limits return 429.
+Other provider failures return 502.
+
+## Changes Person B must make in the frontend
+
+Send `language` with diagnosis and use `lug` for Luganda. Call `/api/speak`
+with POST JSON. Show `confidence` and `needs_clearer_photo`. Send the actual
+recording MIME type to `/api/transcribe`.

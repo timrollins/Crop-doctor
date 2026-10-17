@@ -1,0 +1,44 @@
+services:
+  - type: web
+    name: crop-doctor
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: LLM_PROVIDER
+        sync: false
+      - key: LLM_API_URL
+        sync: false
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_MODEL
+        sync: false
+      - key: LLM_FALLBACK_URL
+        sync: false
+      - key: LLM_FALLBACK_KEY
+        sync: false
+      - key: LLM_FALLBACK_MODEL
+        sync: false
+      - key: STT_PROVIDER
+        sync: false
+      - key: STT_API_URL
+        sync: false
+      - key: STT_API_KEY
+        sync: false
+      - key: TTS_API_URL
+        sync: false
+      - key: TTS_API_KEY
+        sync: false
+      - key: KNOWLEDGE_DIR
+        sync: false
+      - key: AUDIO_DIR
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: RESPONSE_CACHE_SECONDS
+        sync: false
+      - key: MAX_IMAGE_SIDE
+        sync: false
+      - key: MAX_UPLOAD_MB
+        sync: false
