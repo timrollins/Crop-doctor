@@ -1,7 +1,8 @@
 .env
+venv/
 __pycache__/
-*.py[cod]
-.pytest_cache/
-.venv/
-backend/audio_out/*
-!backend/audio_out/.gitkeep
+backend/audio_out/
+*.wav
+*.mp3.env
+venv/
+__pycache__/
