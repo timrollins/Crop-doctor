@@ -8,17 +8,46 @@
   </head>
   <body>
     <main>
-      <h1>Crop Doctor</h1>
-      <p>Describe what you see in your crop to get practical next steps.</p>
+      <header>
+        <p class="eyebrow">Crop Doctor</p>
+        <h1>Clear advice for healthier crops</h1>
+        <p>Take a leaf photo or describe what you see. You can also ask a follow-up question by voice.</p>
+      </header>
       <form id="diagnosis-form">
         <label for="question">What is happening?</label>
-        <textarea id="question" required rows="5" placeholder="Example: My tomato leaves have brown spots..."></textarea>
-        <button type="submit">Get advice</button>
+        <textarea id="question" required rows="4" placeholder="Example: My tomato leaves have brown spots..."></textarea>
+        <div class="toolbar">
+          <button id="record-button" type="button" class="secondary" aria-pressed="false">🎙️ Record question</button>
+          <span id="recording-status" role="status"></span>
+        </div>
+        <label for="photo">Leaf photo (optional)</label>
+        <input id="photo" type="file" accept="image/*" capture="environment">
+        <img id="photo-preview" alt="Selected crop photo preview" hidden>
+        <button type="submit">🔎 Diagnose crop</button>
+      </form>
+      <hr>
+      <form id="ask-form">
+        <label for="follow-up">Ask a follow-up question</label>
+        <div class="input-row">
+          <input id="follow-up" required maxlength="5000" placeholder="Should I remove the spotted leaves?">
+          <button id="ask-record-button" type="button" class="secondary" aria-pressed="false">🎙️</button>
+        </div>
+        <label for="language">Answer language</label>
+        <select id="language">
+          <option value="en">English</option>
+          <option value="sw">Kiswahili</option>
+          <option value="lg">Luganda</option>
+        </select>
+        <button type="submit">💬 Ask</button>
       </form>
       <p id="status" role="status"></p>
       <section id="answer" hidden>
         <h2>Advice</h2>
         <p id="answer-text"></p>
+        <div class="audio-controls">
+          <audio id="answer-audio" controls preload="none"></audio>
+          <button id="replay-button" type="button" class="secondary">▶ Replay</button>
+        </div>
       </section>
     </main>
     <script src="/static/app.js"></script>

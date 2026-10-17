@@ -9,7 +9,11 @@ from dataclasses import dataclass
 class Settings:
     llm_api_url: str = os.getenv("LLM_API_URL", "")
     llm_api_key: str = os.getenv("LLM_API_KEY", "")
-    llm_model: str = os.getenv("LLM_MODEL", "crop-doctor")
+    llm_model: str = os.getenv("LLM_MODEL", "gemma-3-27b-it")
+    llm_provider: str = os.getenv("LLM_PROVIDER", "google")
+    llm_fallback_url: str = os.getenv("LLM_FALLBACK_URL", "")
+    llm_fallback_key: str = os.getenv("LLM_FALLBACK_KEY", "")
+    llm_fallback_model: str = os.getenv("LLM_FALLBACK_MODEL", "google/gemma-3-27b-it")
     stt_api_url: str = os.getenv("STT_API_URL", "")
     stt_api_key: str = os.getenv("STT_API_KEY", "")
     tts_api_url: str = os.getenv("TTS_API_URL", "")

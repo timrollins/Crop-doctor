@@ -3,6 +3,7 @@ venv/
 __pycache__/
 backend/audio_out/
 *.wav
-*.mp3.env
+*.mp3
+*.webm
 venv/
 __pycache__/

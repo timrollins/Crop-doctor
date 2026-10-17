@@ -1,6 +1,17 @@
 :root { color-scheme: light; font-family: system-ui, sans-serif; }
 body { margin: 0; background: #f2f7ef; color: #17351d; }
-main { max-width: 42rem; margin: 4rem auto; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 0.5rem 2rem #17351d18; }
-textarea { box-sizing: border-box; display: block; width: 100%; margin: 0.5rem 0 1rem; padding: 0.75rem; border: 1px solid #9ab49d; border-radius: 0.5rem; font: inherit; }
+main { max-width: 42rem; margin: 2rem auto; padding: 2rem; background: white; border-radius: 1rem; box-shadow: 0 0.5rem 2rem #17351d18; }
+.eyebrow { margin-bottom: 0; color: #26733b; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+h1 { margin-top: .25rem; }
+label { display: block; margin-top: 1rem; font-weight: 700; }
+textarea, input, select { box-sizing: border-box; display: block; width: 100%; margin: 0.5rem 0 1rem; padding: 0.75rem; border: 1px solid #9ab49d; border-radius: 0.5rem; font: inherit; }
+input[type="file"] { padding: .5rem; }
 button { padding: 0.7rem 1.1rem; border: 0; border-radius: 0.5rem; background: #26733b; color: white; font-weight: 700; cursor: pointer; }
+button.secondary { background: #dcebdd; color: #17351d; }
+.toolbar, .input-row, .audio-controls { display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+#recording-status { font-size: .9rem; }
+#photo-preview { max-width: 100%; max-height: 18rem; margin: .5rem 0 1rem; border-radius: .5rem; }
+hr { margin: 2rem 0; border: 0; border-top: 1px solid #dcebdd; }
 #answer { margin-top: 2rem; padding: 1rem; border-left: 0.3rem solid #26733b; background: #eef8ed; }
+#answer-audio { flex: 1 1 16rem; }
+@media (max-width: 48rem) { main { margin: 0; min-height: 100vh; border-radius: 0; } }

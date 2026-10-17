@@ -10,6 +10,8 @@ class KnowledgeBase:
         self.directory = Path(directory)
 
     def get(self, problem_id: str) -> dict[str, Any] | None:
+        if Path(problem_id).name != problem_id or not problem_id.replace("-", "").isalnum():
+            return None
         path = self.directory / f"{problem_id}.json"
         if not path.is_file():
             return None
