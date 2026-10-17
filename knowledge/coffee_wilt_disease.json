@@ -1,0 +1,13 @@
+{
+  "id": "coffee_wilt_disease",
+  "crop": "coffee",
+  "problem": "Coffee Wilt Disease",
+  "symptoms": "Leaves yellow, wilt, and drop. Branches die back, the tree weakens fast, and brown streaks may show under the bark near the base.",
+  "cause": "A serious fungal disease that moves through infected planting material, cut roots, and contaminated tools.",
+  "cultural_control": "Uproot and destroy infected trees early. Clean tools after working on each tree. Do not move suckers or firewood from infected farms. Keep the garden clean and avoid wounding roots and stems.",
+  "chemical_option": "There is no reliable chemical cure for an infected tree. If an officer recommends treatment for related problems, use only registered products in Uganda and follow the label.",
+  "prevention": "Use clean planting material and ask NARO or your extension officer for current recommended coffee varieties.",
+  "see_officer_when": "Report suspected coffee wilt to the agricultural officer as soon as you see fast wilting or tree death in the garden.",
+  "source": "Draft knowledge entry to verify against NARO, MAAIF, and FAO guidance.",
+  "review_status": "draft - verify with NARO/MAAIF/FAO before production use"
+}

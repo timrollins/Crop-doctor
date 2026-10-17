@@ -87,7 +87,7 @@ def test_status_and_speak_compatibility(monkeypatch, tmp_path: Path) -> None:
     monkeypatch.setattr(main, "synthesize", fake_synthesize)
     client = TestClient(create_app(settings(tmp_path)))
     assert client.get("/api/health").json() == {"status": "ok"}
-    assert client.get("/api/status").json()["knowledge_entries"] == 4
+    assert client.get("/api/status").json()["knowledge_entries"] >= 10
     assert client.post("/api/speak", json={"text": "Hello", "language": "en"}).status_code == 200
     assert client.get("/api/speak?text=Hello&language=en").status_code == 200
 

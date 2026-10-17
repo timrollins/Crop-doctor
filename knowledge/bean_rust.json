@@ -1,0 +1,13 @@
+{
+  "id": "bean_rust",
+  "crop": "beans",
+  "problem": "Bean Rust",
+  "symptoms": "Small powdery brown or reddish spots appear on the leaves, then the leaves yellow and dry. Severely affected plants give a small harvest.",
+  "cause": "A fungal disease that spreads by spores in warm, moist conditions and in dense fields.",
+  "cultural_control": "Remove badly affected leaves where practical, avoid moving through wet crops, and keep the field well spaced. Rotate away from beans and remove volunteer bean plants after harvest.",
+  "chemical_option": "Use only products registered in Uganda for bean rust if the disease is severe. Ask an agro-dealer or extension officer for the product and dose, and wear protective clothing. Follow the label and pre-harvest interval.",
+  "prevention": "Plant clean seed, keep the field airy, and ask NARO or your extension officer for current recommended varieties.",
+  "see_officer_when": "Seek local extension help if the rust spreads quickly across the field or the crop is still young.",
+  "source": "Draft knowledge entry to verify against NARO, MAAIF, and FAO guidance.",
+  "review_status": "draft - verify with NARO/MAAIF/FAO before production use"
+}

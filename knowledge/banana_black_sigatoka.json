@@ -1,0 +1,13 @@
+{
+  "id": "banana_black_sigatoka",
+  "crop": "banana",
+  "problem": "Black Sigatoka",
+  "symptoms": "Long dark streaks on banana leaves that grow into brown or black dead patches. Severe cases leave only a few green leaves and the plant fills bunches poorly.",
+  "cause": "A fungal leaf disease that spreads in warm, wet weather and when old infected leaves remain in the mat.",
+  "cultural_control": "Remove badly infected leaves and place them away from the garden. Keep plants well spaced, weed the mat, and let more air and light into the canopy. Use clean planting material and avoid moving infected suckers.",
+  "chemical_option": "Use only products registered in Uganda for banana leaf disease if pressure is high. Ask an agro-dealer or extension officer for the product and dose, and wear protective clothing. Follow the pre-harvest interval on the label.",
+  "prevention": "Keep the banana garden clean, prune old leaves carefully, and ask NARO or your extension officer for current recommended varieties.",
+  "see_officer_when": "If most leaves are badly spotted, the mat is weak, or the problem keeps spreading after sanitation.",
+  "source": "Draft knowledge entry to verify against NARO, MAAIF, and FAO guidance.",
+  "review_status": "draft - verify with NARO/MAAIF/FAO before production use"
+}

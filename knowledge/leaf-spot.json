@@ -8,5 +8,6 @@
   "chemical_option": "Ask a local extension worker about a crop-approved treatment.",
   "prevention": "Keep foliage dry where possible and remove affected plant material.",
   "see_officer_when": "Seek a local extension worker when symptoms spread or the crop is badly affected.",
-  "source": "Local Crop Doctor starter knowledge base"
+  "source": "Local Crop Doctor starter knowledge base; verify against NARO, MAAIF, and FAO guidance.",
+  "review_status": "draft - verify with NARO/MAAIF/FAO before production use"
 }

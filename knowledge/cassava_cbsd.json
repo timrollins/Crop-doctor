@@ -6,6 +6,8 @@
   "cause": "Cassava brown streak viruses, spread by whiteflies and by planting infected cuttings.",
   "cultural_control": "Plant only clean cuttings from healthy plants. Uproot and destroy infected plants early. Harvest sooner in affected fields. Do not move cuttings from infected gardens.",
   "chemical_option": "No chemical cures the virus. Controlling whiteflies with sprays is not reliable.",
-  "prevention": "Use tolerant or resistant varieties recommended locally (such as NASE varieties; confirm current choices with NARO).",
-  "see_officer_when": "Many plants in the field show symptoms, or you want certified clean planting material."
+  "prevention": "Use tolerant or resistant varieties recommended locally. Ask NARO or your extension officer for current recommended varieties and certified clean planting material.",
+  "see_officer_when": "Many plants in the field show symptoms, or you want certified clean planting material.",
+  "source": "Draft knowledge entry to verify against NARO, MAAIF, and FAO guidance.",
+  "review_status": "draft - verify with NARO/MAAIF/FAO before production use"
 }

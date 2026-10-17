@@ -1,0 +1,13 @@
+{
+  "id": "maize_mln",
+  "crop": "maize",
+  "problem": "Maize Lethal Necrosis (MLN)",
+  "symptoms": "Young leaves show mottling, yellow streaks, and stunting. Plants may dry fast, ears stay small, and the whole field can look patchy and weak.",
+  "cause": "A disease caused by a virus combination that spreads through infected seed or planting material and through insects that move between maize plants.",
+  "cultural_control": "Rogue and destroy badly diseased plants early. Plant only clean seed from trusted sources. Remove volunteer maize and grassy hosts near the field. Keep the field weed-free and reduce stress on the crop.",
+  "chemical_option": "No chemical cures MLN. If an officer advises insect control, use only products registered in Uganda and ask for the product and dose. Wear protective clothing and follow the label.",
+  "prevention": "Use clean seed, rotate away from maize when possible, and ask NARO or your extension officer for current recommended varieties.",
+  "see_officer_when": "Report suspected MLN to the agricultural officer quickly, especially if many plants are stunted or the disease appears in patches across the field.",
+  "source": "Draft knowledge entry to verify against NARO, MAAIF, and FAO guidance.",
+  "review_status": "draft - verify with NARO/MAAIF/FAO before production use"
+}

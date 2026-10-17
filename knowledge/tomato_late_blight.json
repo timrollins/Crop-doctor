@@ -1,0 +1,13 @@
+{
+  "id": "tomato_late_blight",
+  "crop": "tomato",
+  "problem": "Late Blight",
+  "symptoms": "Water-soaked dark patches appear on leaves and stems, then the plant turns brown quickly. Fruit can show hard dark rot and the whole crop may collapse in wet weather.",
+  "cause": "A fast-moving fungal-like disease that spreads in cool, wet conditions and in gardens with poor airflow.",
+  "cultural_control": "Remove badly infected plants and keep them away from the garden. Stake plants, avoid watering the leaves, improve spacing, and destroy old infected crop debris after harvest.",
+  "chemical_option": "Use only products registered in Uganda for tomato blight if needed, such as mancozeb or metalaxyl mixtures. Ask an agro-dealer or extension officer for the product and dose, wear protective clothing, and follow the pre-harvest interval on the label.",
+  "prevention": "Keep the tomato garden airy and dry where possible, and ask NARO or your extension officer for current recommended varieties.",
+  "see_officer_when": "Seek help quickly if wet weather is spreading the disease or many plants are collapsing in a short time.",
+  "source": "Draft knowledge entry to verify against NARO, MAAIF, and FAO guidance.",
+  "review_status": "draft - verify with NARO/MAAIF/FAO before production use"
+}

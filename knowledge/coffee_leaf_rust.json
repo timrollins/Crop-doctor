@@ -1,0 +1,13 @@
+{
+  "id": "coffee_leaf_rust",
+  "crop": "coffee",
+  "problem": "Coffee Leaf Rust",
+  "symptoms": "Orange or powdery rust spots appear on the underside of leaves, then leaves yellow and fall early. Heavy attack reduces flowering and yield.",
+  "cause": "A fungal disease that spreads in humid weather and where shade is dense and air movement is poor.",
+  "cultural_control": "Prune to improve airflow, remove badly infected leaves when practical, and keep the garden weed-free. Manage shade so the bushes do not stay too damp. Keep the trees well nourished and clean.",
+  "chemical_option": "Use only products registered in Uganda for coffee rust if needed. Ask an agro-dealer or extension officer for the product and dose, wear protective clothing, and follow the pre-harvest interval on the label.",
+  "prevention": "Keep the coffee field open to air, use good sanitation, and ask NARO or your extension officer for current recommended varieties.",
+  "see_officer_when": "Seek advice when rust is spreading quickly, young bushes are badly affected, or the garden is repeatedly losing leaves.",
+  "source": "Draft knowledge entry to verify against NARO, MAAIF, and FAO guidance.",
+  "review_status": "draft - verify with NARO/MAAIF/FAO before production use"
+}

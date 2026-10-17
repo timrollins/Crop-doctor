@@ -7,5 +7,7 @@
   "cultural_control": "Scout the field weekly from germination. Crush egg masses and caterpillars by hand. Put dry wood ash or fine dry sand into the whorl. Neem seed extract can reduce young caterpillars.",
   "chemical_option": "Only use products registered in Uganda for maize, such as emamectin benzoate or similar. Ask an agro-dealer or extension officer for the registered product and dose. Wear gloves, a mask, and long clothing. Observe the pre-harvest interval on the label.",
   "prevention": "Plant early with the first rains, avoid staggered planting, and rotate with non-cereal crops such as beans.",
-  "see_officer_when": "More than about one in five plants is damaged, or caterpillars are in the cobs."
+  "see_officer_when": "More than about one in five plants is damaged, or caterpillars are in the cobs.",
+  "source": "Draft knowledge entry to verify against NARO, MAAIF, and FAO guidance.",
+  "review_status": "draft - verify with NARO/MAAIF/FAO before production use"
 }
