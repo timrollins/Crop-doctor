@@ -7,47 +7,112 @@
     <link rel="stylesheet" href="/static/styles.css">
   </head>
   <body>
-    <main>
-      <header>
-        <p class="eyebrow">Crop Doctor</p>
-        <h1>Clear advice for healthier crops</h1>
-        <p>Take a leaf photo or describe what you see. You can also ask a follow-up question by voice.</p>
+    <main class="page-shell">
+      <header class="hero card">
+        <div class="hero-copy">
+          <p class="eyebrow">Crop Doctor</p>
+          <h1>Simple crop advice for Ugandan farmers</h1>
+          <p class="lede">Use a photo or your voice to ask about cassava, maize, bananas, coffee, beans, or tomato. The app gives short advice from the local knowledge base and can read it aloud when audio is available.</p>
+          <p class="reminder">This is guidance, not a replacement for your agricultural extension officer.</p>
+        </div>
+        <div class="language-card">
+          <label for="language">Language</label>
+          <select id="language">
+            <option value="en">English</option>
+            <option value="lug">Luganda</option>
+            <option value="sw">Kiswahili</option>
+          </select>
+        </div>
+        <ul class="support-list" aria-label="Supported crops">
+          <li>Banana</li>
+          <li>Cassava</li>
+          <li>Maize</li>
+          <li>Coffee</li>
+          <li>Beans</li>
+          <li>Tomato</li>
+        </ul>
       </header>
-      <form id="diagnosis-form">
-        <label for="question">What is happening?</label>
-        <textarea id="question" required rows="4" placeholder="Example: My tomato leaves have brown spots..."></textarea>
-        <div class="toolbar">
-          <button id="record-button" type="button" class="secondary" aria-pressed="false">🎙️ Record question</button>
-          <span id="recording-status" role="status"></span>
+
+      <section class="quick-actions card" aria-label="Quick actions">
+        <button id="go-diagnose" type="button" class="hero-action">📷 Check my crop</button>
+        <button id="go-ask" type="button" class="hero-action secondary-action">🎤 Ask a question</button>
+      </section>
+
+      <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true"></p>
+      <div class="status-row">
+        <button id="retry-button" type="button" class="secondary retry-button" hidden>Retry</button>
+      </div>
+      <p id="recording-status" class="status status-subtle" role="status" aria-live="polite" aria-atomic="true"></p>
+
+      <section id="diagnosis-section" class="card" aria-labelledby="diagnosis-title">
+        <h2 id="diagnosis-title">Check your crop</h2>
+        <form id="diagnosis-form">
+          <label for="photo">Photo</label>
+          <input id="photo" type="file" accept="image/*" capture="environment">
+          <img id="photo-preview" alt="Selected crop photo preview" hidden>
+          <div class="field-actions">
+            <button id="take-photo-button" type="button" class="secondary">📷 Take a photo</button>
+            <button id="clear-photo-button" type="button" class="secondary">✕ Remove photo</button>
+          </div>
+
+          <details class="type-toggle">
+            <summary>Type instead</summary>
+            <label for="question">What do you see?</label>
+            <textarea id="question" rows="4" placeholder="Example: My tomato leaves have brown spots."></textarea>
+            <button id="record-button" type="button" class="secondary" aria-pressed="false">🎙️ Record question</button>
+          </details>
+
+          <button type="submit" class="primary-action">🔎 Check my crop</button>
+        </form>
+      </section>
+
+      <section id="answer" class="card answer-card" hidden aria-labelledby="answer-title">
+        <div class="answer-head">
+          <h2 id="answer-title">Advice</h2>
+          <span id="confidence-badge" class="confidence-badge" aria-live="polite"></span>
         </div>
-        <label for="photo">Leaf photo (optional)</label>
-        <input id="photo" type="file" accept="image/*" capture="environment">
-        <img id="photo-preview" alt="Selected crop photo preview" hidden>
-        <button type="submit">🔎 Diagnose crop</button>
-      </form>
-      <hr>
-      <form id="ask-form">
-        <label for="follow-up">Ask a follow-up question</label>
-        <div class="input-row">
-          <input id="follow-up" required maxlength="5000" placeholder="Should I remove the spotted leaves?">
-          <button id="ask-record-button" type="button" class="secondary" aria-pressed="false">🎙️</button>
-        </div>
-        <label for="language">Answer language</label>
-        <select id="language">
-          <option value="en">English</option>
-          <option value="sw">Kiswahili</option>
-          <option value="lg">Luganda</option>
-        </select>
-        <button type="submit">💬 Ask</button>
-      </form>
-      <p id="status" role="status"></p>
-      <section id="answer" hidden>
-        <h2>Advice</h2>
-        <p id="answer-text"></p>
+        <figure id="result-photo-wrap" class="result-photo-wrap" hidden>
+          <img id="result-photo" alt="Crop photo used for the latest diagnosis">
+        </figure>
+        <p class="result-line"><strong id="result-crop"></strong></p>
+        <p class="result-line"><strong id="result-problem"></strong></p>
+        <p id="answer-text" class="answer-text"></p>
+        <p id="result-warning" class="hint" hidden></p>
+        <p id="result-degraded" class="note" hidden></p>
+        <p id="audio-note" class="note" hidden></p>
         <div class="audio-controls">
-          <audio id="answer-audio" controls preload="none"></audio>
-          <button id="replay-button" type="button" class="secondary">▶ Replay</button>
+          <button id="play-button" type="button" class="primary-action">▶ Play advice</button>
+          <button id="replay-button" type="button" class="secondary">↻ Replay</button>
+          <audio id="answer-audio" preload="none" hidden></audio>
         </div>
+        <button id="retake-button" type="button" class="secondary" hidden>Take a closer photo in daylight, showing both sides of the leaf</button>
+      </section>
+
+      <section id="ask-section" class="card" aria-labelledby="ask-title">
+        <h2 id="ask-title">Ask a follow-up</h2>
+        <p class="lede">Use voice first. The app keeps the last diagnosis context so follow-ups stay tied to the same crop problem.</p>
+        <form id="ask-form">
+          <label for="follow-up">Voice or text</label>
+          <textarea id="follow-up" rows="3" placeholder="Ask what to do next"></textarea>
+          <div class="field-actions">
+            <button id="ask-record-button" type="button" class="secondary" aria-pressed="false">🎤 Record follow-up</button>
+            <button type="submit" class="primary-action">Send follow-up</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="transcript-panel" class="card transcript-panel" hidden aria-labelledby="transcript-title">
+        <h2 id="transcript-title">Confirm the transcript</h2>
+        <p id="transcript-text" class="transcript-text"></p>
+        <div class="field-actions">
+          <button id="transcript-use-button" type="button" class="primary-action">Use this text</button>
+          <button id="transcript-rerecord-button" type="button" class="secondary">Record again</button>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="history-title">
+        <h2 id="history-title">Recent advice</h2>
+        <ul id="history-list" class="history-list"></ul>
       </section>
     </main>
     <script src="/static/app.js"></script>
